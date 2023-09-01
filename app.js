@@ -4,11 +4,13 @@ window.addEventListener("load" , ()=>{
     const list_el = document.querySelector("#tasks");
 
     const currentDate = new Date();
-    const datee = currentDate.getDay();
+    const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    const weekName = daysOfWeek[currentDate.getUTCDay()]; // Get the day of the week as a string
+    const datee = currentDate.getDate();
     const month = currentDate.getMonth();
     const year = currentDate.getFullYear();
     const weLiveInMoments = document.getElementById("welive");
-    weLiveInMoments.innerHTML = `Todo list ${datee} / ${month} / ${year}` 
+    weLiveInMoments.innerHTML = `Todo list ${weekName} ${datee} / ${month} / ${year}` 
 
 
    form.addEventListener("submit" , (e)=>{
